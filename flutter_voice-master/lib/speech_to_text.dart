@@ -43,7 +43,7 @@ class SpeechScreen extends StatefulWidget {
 }
 
 class _SpeechScreenState extends State<SpeechScreen> {
-
+  
   String key = 'กุญแจ';
   String bottle = 'ขวดน้ำ';
   String air = 'รีโมทแอร์';
@@ -117,7 +117,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CameraScreen(cameras: widget.cameras),
+                      builder: (context) => CameraScreen(cameras: widget.cameras,mm: "key",),
                     ),
                   );
                 }
@@ -130,7 +130,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CameraScreen(cameras: widget.cameras),
+                      builder: (context) => CameraScreen(cameras: widget.cameras,mm: "bottle",),
                     ),
                   );
                 }
@@ -143,7 +143,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CameraScreen(cameras: widget.cameras),
+                      builder: (context) => CameraScreen(cameras: widget.cameras,mm: "remote_air",),
                     ),
                   );
                 }  
@@ -156,7 +156,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CameraScreen(cameras: widget.cameras),
+                      builder: (context) => CameraScreen(cameras: widget.cameras,mm: "remote_TV",),
                     ),
                   );
                 }                
@@ -169,7 +169,7 @@ class _SpeechScreenState extends State<SpeechScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CameraScreen(cameras: widget.cameras),
+                      builder: (context) => CameraScreen(cameras: widget.cameras,mm:"glass",),
                     ),
                   );
                 }
@@ -184,3 +184,5 @@ class _SpeechScreenState extends State<SpeechScreen> {
     }
   }
 }
+
+

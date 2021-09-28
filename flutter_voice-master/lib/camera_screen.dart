@@ -13,9 +13,10 @@ import 'package:async/async.dart';
 
 class CameraScreen extends StatefulWidget {
   List<CameraDescription>? cameras;
-
+  String? mm;
   CameraScreen({
     this.cameras,
+     this.mm
   });
 
   @override
@@ -23,6 +24,13 @@ class CameraScreen extends StatefulWidget {
 }
 
 class _CameraScreenState extends State<CameraScreen> {
+  String key = 'key';
+  String bottle = 'bottle';
+  String air = '';
+  String tv = '';
+  String glass = '';
+  // String values = "";
+
   @override
   void initState() {
     initializeCamera(selectedCamera); //Initially selectedCamera = 0
@@ -60,11 +68,40 @@ class _CameraScreenState extends State<CameraScreen> {
 
     // send
     var response = await request.send();
-    print(response.statusCode);
+    print(response.stream);
+    
 
     // listen for response
     response.stream.transform(utf8.decoder).listen((value) {
-      print(value);
+      // print(this.widget.mm);
+
+      if (this.widget.mm == "key"){
+        if (value=="key"){
+          print('กุญแจ');
+        }
+      }
+      if (this.widget.mm == "bottle"){
+        if (value=="bottle"){
+          print('ขวดน้ำ');
+        }
+      }
+      if (this.widget.mm == "glass"){
+        if (value=="glass"){
+          print('แก้วน้ำ');
+        }
+      }
+      if (this.widget.mm == "remote_TV"){
+        if (value=="remote_TV")
+          print('รีโมททีวี');
+      }
+      if (this.widget.mm == "remote_air"){
+        if (value=="remote_air"){
+          print('รีโมทแอร์');
+        }
+      }
+      // else{
+      //   print('ไม่มี');
+      // }
     });
   }
 
@@ -96,7 +133,7 @@ class _CameraScreenState extends State<CameraScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      // backgroundColor: Colors.black,
       body: Column(
         children: [
           FutureBuilder<void>(

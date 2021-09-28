@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Camera App',
+      debugShowCheckedModeBanner: false,
+      title: '',
       home: SpeechScreen(cameras: cameras),
     );
   }
@@ -40,3 +41,16 @@ class _myTestState extends State<myTest> {
     );
   }
 }
+
+
+// aboutDialog(){
+//      showAboutDialog(
+//       context: context,
+//       applicationName: "Object Detector App",
+//       applicationLegalese: "By Rupak Karki",
+//       applicationVersion: "1.0",
+//       children: <Widget>[
+//         Text("www.rupakkarki.com.np"),
+//       ],
+//     );
+//   }
